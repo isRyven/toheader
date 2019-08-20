@@ -43,7 +43,7 @@ int main(int argc, const char **argv)
 	const char *name;
 	// char cwd[1024];
 	int size, readSize;
-	if (argc != 3)
+	if (argc != 4)
 	{
 		fprintf(stderr, "%s\n", "Error: no input files were provided");
 		fprintf(stderr, "%s\n", "Usage: bundler varname input output");
