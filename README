@@ -1,0 +1,3 @@
+converts input file into c header
+
+$ ./tocheader varName input output.h
