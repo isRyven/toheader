@@ -46,7 +46,7 @@ int main(int argc, const char **argv)
 	if (argc != 4)
 	{
 		fprintf(stderr, "%s\n", "Error: no input files were provided");
-		fprintf(stderr, "%s\n", "Usage: bundler varname input output");
+		fprintf(stderr, "%s\n", "Usage: ./toheader varName input output.h");
 		return 1;
 	}
 	name = argv[2];
@@ -75,7 +75,7 @@ int main(int argc, const char **argv)
 		fprintf(stderr, "Error: could not seek in file: %s\n%s\n", name, strerror(errno));
 		return 1;
 	}
-	buf = malloc(size + 1);
+	buf = malloc(size);
 	if (!buf)
 	{
 		fclose(f);
@@ -91,7 +91,6 @@ int main(int argc, const char **argv)
 		return 1;
 	}
 	fclose(f);
-	buf[size++] = 0;
 	f = fopen(argv[3], "wb+");
 	if (!f)
 	{
